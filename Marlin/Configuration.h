@@ -937,7 +937,9 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 25, 25 }
+//#define DEFAULT_MAX_FEEDRATE          { 200, 200, 25, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 25, 25 }
+
 //#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
 //#define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 50 }
 
@@ -1193,12 +1195,12 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -33, -44, -0.775 }
-//#define NOZZLE_TO_PROBE_OFFSET { -33, -44, -0.825 }
+//#define NOZZLE_TO_PROBE_OFFSET { -33, -44, -0.775 }
+#define NOZZLE_TO_PROBE_OFFSET { -35, -41, -0.625 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 5
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1627,7 +1629,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
